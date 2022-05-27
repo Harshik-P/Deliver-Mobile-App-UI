@@ -41,7 +41,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               return checkBoxUI(index);
                             }),
                       ),
-                      showWidget(checkBoxIndex),
+                      showCheckWidget(checkBoxIndex),
                     ]),
                   ],
                 ),
@@ -131,7 +131,7 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
-  Positioned showWidget(value){
+  Positioned showCheckWidget(value){
     if(value==0){
       return const Positioned(
           bottom: 4,

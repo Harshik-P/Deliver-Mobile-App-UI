@@ -54,11 +54,10 @@ class MyPackagePage extends StatelessWidget {
                             ),
 
                             const SizedBox(height: 13,),
-                            Container(
-                              child: const Padding(
+                              const Padding(
                               padding: EdgeInsets.fromLTRB(52, 5, 50, 5),
                               child: Text("Need to deliver a book to my brother", style: TextStyle(fontSize: 18, color: Colors.grey),),
-                            )),
+                            ),
                             const SizedBox(height: 13,)
                           ],
                         ),
@@ -111,7 +110,7 @@ class MyPackagePage extends StatelessWidget {
                   image: AssetImage("${imgPath}"),
                   fit: BoxFit.contain,
                 )),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text("${title}")

@@ -37,14 +37,14 @@ class _PackageConstraintsPageState extends State<PackageConstraintsPage> {
               ),
             ),
             
-            SizedBox(height: 35,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
+            const SizedBox(height: 35,),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Text("Please choose unit of dimensions", style: TextStyle(fontSize: 20, color: Colors.grey),)),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Row(
@@ -63,7 +63,7 @@ class _PackageConstraintsPageState extends State<PackageConstraintsPage> {
   }
 
 
-  Row customTextField(String title, measuretitle) {
+  Widget customTextField(String title, measuretitle) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -104,7 +104,7 @@ class _PackageConstraintsPageState extends State<PackageConstraintsPage> {
           children: [
             Text(
               "${measuretitle}",
-              style: TextStyle(color: Colors.black, fontSize: 18),
+              style: const TextStyle(color: Colors.black, fontSize: 18),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 8),
@@ -139,8 +139,8 @@ class _PackageConstraintsPageState extends State<PackageConstraintsPage> {
             : DottedBorder(
                 color: Colors.blue,
                 strokeWidth: 1,
-                dashPattern: [8, 5],
-                child: Container(
+                dashPattern: const [8, 5],
+                child: SizedBox(
                   height: 39,
                   width: 86,
                   child: Center(child: Text("${title}")),

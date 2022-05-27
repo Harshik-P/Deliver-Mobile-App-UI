@@ -37,13 +37,13 @@ class _PackageDetailsPageState extends State<PackageDetailsPage> {
                     ],),
                           
                     const SizedBox(height: 30,),
-                    const Text("Item name & description", style: TextStyle(color: Colors.grey, fontSize: 16),),
+                    customTextField("Item name & description"),
                     const TextField(),
                     const SizedBox(height: 18,),
-                    const Text("Person/Shop in charge",  style: TextStyle(color: Colors.grey, fontSize: 16),),
+                    customTextField("Person/Shop in charge"),
                     const TextField(),
                     const SizedBox(height: 18,),
-                    const Text("Contact Number",  style: TextStyle(color: Colors.grey, fontSize: 16),),
+                    customTextField("Contact Number"),
                     const TextField(),
                     const SizedBox(height: 30,),
                     const Text("Do you want the driver to purchase this item for you?", style: TextStyle(fontSize: 16),),
@@ -88,6 +88,9 @@ class _PackageDetailsPageState extends State<PackageDetailsPage> {
     );
   }
 
+  Widget customTextField (String title) {
+    return Text("${title}",  style: const TextStyle(color: Colors.grey, fontSize: 16),);
+  }
 
   Widget boolButtons(String bool) {
     return Container(

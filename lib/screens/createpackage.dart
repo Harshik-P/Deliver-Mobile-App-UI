@@ -23,8 +23,7 @@ class _createPackageState extends State<createPackage> {
           SingleChildScrollView(
             child: Column(
               children: [
-                Container(
-                  child: Padding(
+                  Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +41,7 @@ class _createPackageState extends State<createPackage> {
                               cursorColor: Colors.black,
                               textAlign: TextAlign.end,
                               decoration: InputDecoration(
-                                contentPadding: EdgeInsets.symmetric(vertical: 15),
+                                contentPadding: const EdgeInsets.symmetric(vertical: 15),
                                 suffixIcon: Transform.rotate(
                                   angle: 330 * pi / 180,
                                   child: const Icon(
@@ -52,14 +51,14 @@ class _createPackageState extends State<createPackage> {
                                 ),
                                 suffixIconColor: Colors.transparent,
                               ),
-                              style: TextStyle(fontSize: 20),
+                              style: const TextStyle(fontSize: 20),
                             ),
                             Positioned(
                               right: 10,
                               top: 12,
                               child: Transform.rotate(
                                 angle: 330 * pi / 180,
-                                child: Icon(
+                                child: const Icon(
                                   Icons.send,
                                   color: Colors.blue,
                                 ),
@@ -68,14 +67,13 @@ class _createPackageState extends State<createPackage> {
                           ]),
                         ),
           
-                        SizedBox(height: 30,),
+                        const SizedBox(height: 30,),
           
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text("Date:", style: TextStyle(color: Colors.grey[600], fontSize: 19),),
-                            Container(
-                              child: Row(
+                              Row(
                                 children: const [
                                   Icon(Icons.calendar_today, size: 21, color: Colors.blue,),
                                   SizedBox(width: 15,),
@@ -120,11 +118,10 @@ class _createPackageState extends State<createPackage> {
                                   ),
                                 ],
                               ),
-                            )
                           ],
                         ),
           
-                        SizedBox(height: 25,),
+                        const SizedBox(height: 25,),
           
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.9,
@@ -139,7 +136,7 @@ class _createPackageState extends State<createPackage> {
                               cursorColor: Colors.black,
                               textAlign: TextAlign.end,
                               decoration: InputDecoration(
-                                contentPadding: EdgeInsets.symmetric(vertical: 15),
+                                contentPadding: const EdgeInsets.symmetric(vertical: 15),
                                 suffixIcon: Transform.rotate(
                                   angle: 330 * pi / 180,
                                   child: const Icon(
@@ -149,14 +146,14 @@ class _createPackageState extends State<createPackage> {
                                 ),
                                 suffixIconColor: Colors.transparent,
                               ),
-                              style: TextStyle(fontSize: 20),
+                              style: const TextStyle(fontSize: 20),
                             ),
                             Positioned(
                               right: 10,
                               top: 12,
                               child: Transform.rotate(
                                 angle: 330 * pi / 180,
-                                child: Icon(
+                                child: const Icon(
                                   Icons.send,
                                   color: Colors.blue,
                                 ),
@@ -165,13 +162,12 @@ class _createPackageState extends State<createPackage> {
                           ]),
                         ),
           
-                        SizedBox(height: 30,),
+                        const SizedBox(height: 30,),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text("Date:", style: TextStyle(color: Colors.grey[600], fontSize: 19),),
-                            Container(
-                              child: Row(
+                            Row(
                                 children: const [
                                   Icon(Icons.calendar_today, size: 21, color: Colors.blue,),
                                   SizedBox(width: 15,),
@@ -216,23 +212,20 @@ class _createPackageState extends State<createPackage> {
                                   ),
                                 ],
                               ),
-                            )
                           ],
                         ),
-                        SizedBox(height: 30,),
+                        const SizedBox(height: 30,),
                       ],
                     ),
                   ),
-                ),
           
-                Container(
-                  child: Padding(
+                Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Padding(
-                          padding: const EdgeInsets.all(10.0),
+                          padding: EdgeInsets.all(10.0),
                           child: Text(
                             "Preference for Transport",
                             style:
@@ -251,7 +244,7 @@ class _createPackageState extends State<createPackage> {
                       ],
                     ),
                   ),
-                )
+                
           
               ],
             ),
