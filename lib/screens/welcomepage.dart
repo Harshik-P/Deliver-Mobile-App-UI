@@ -22,10 +22,10 @@ class WelcomePage extends StatelessWidget {
                 child: const Text("WELCOME!", style: TextStyle(color: Colors.white, fontSize: 21, fontWeight: FontWeight.w700),)
               ),
               Positioned(
-                top: MediaQuery.of(context).size.height*0.2,
+                bottom: 0,
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width,
-                  height: 256,
+                  height: MediaQuery.of(context).size.height*0.37,
                   child: const Image(image: AssetImage("assets/welcomepage.png"), fit: BoxFit.fitWidth,))
               )
             ]
