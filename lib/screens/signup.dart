@@ -14,7 +14,7 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
 
   int checkBoxIndex = 0;
-  String genderCheck = "Male";
+  String genderCheck = "Man";
 
   @override
   Widget build(BuildContext context) {
@@ -59,9 +59,9 @@ class _SignUpPageState extends State<SignUpPage> {
                         child: customTextField("Date of birth")
                     ),
                     const SizedBox(width: 20,),
-                    manButton(),
+                    genderButton("Man"),
                     const SizedBox(width: 20,),
-                    womanButton()
+                    genderButton("Woman")
                   ],
                 ),
               ),
@@ -108,7 +108,7 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
 
-  Row checkBoxUI(int index) {
+  Widget checkBoxUI(int index) {
     return Row(
       children: [
         InkWell(
@@ -131,7 +131,7 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
-  Positioned showCheckWidget(value){
+  Widget showCheckWidget(value){
     if(value==0){
       return const Positioned(
           bottom: 4,
@@ -162,11 +162,11 @@ class _SignUpPageState extends State<SignUpPage> {
     }
   }
 
-  InkWell manButton() {
+  Widget genderButton (String title) {
     return InkWell(
       onTap: () {
         setState(() {
-          genderCheck = "Male";
+          genderCheck = title;
         });
       },
       child: Container(
@@ -176,51 +176,25 @@ class _SignUpPageState extends State<SignUpPage> {
             borderRadius: BorderRadius.circular(10),
             border: Border.all(
                 color:
-                    genderCheck == "Male" ? Colors.transparent : Colors.grey),
-            color: genderCheck == "Male" ? Colors.blue : Colors.white),
+                    genderCheck == title ? Colors.transparent : Colors.grey),
+            color: genderCheck == title ? Colors.blue : Colors.white),
         child: Center(
             child: Text(
-          "Man",
+          "${title}",
           style: TextStyle(
-              color: genderCheck == "Male" ? Colors.white : Colors.grey),
+              color: genderCheck == title ? Colors.white : Colors.grey),
         )),
       ),
     );
   }
 
-  InkWell womanButton() {
-    return InkWell(
-      onTap: () {
-        setState(() {
-          genderCheck = "Female";
-        });
-      },
-      child: Container(
-        width: MediaQuery.of(context).size.width * 0.2,
-        height: 45,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(
-                color:
-                    genderCheck == "Female" ? Colors.transparent : Colors.grey),
-            color: genderCheck == "Female" ? Colors.blue : Colors.white),
-        child: Center(
-            child: Text(
-          "Woman",
-          style: TextStyle(
-              color: genderCheck == "Female" ? Colors.white : Colors.grey),
-        )),
-      ),
-    );
-  }
-
-  TextField customTextField(String name) {
+  Widget customTextField(String name) {
     return TextField(
       decoration: InputDecoration(hintText: "${name}"),
     );
   }
 
-  Positioned boxOnTextField() {
+  Widget boxOnTextField() {
     return Positioned(
         right: 3,
         bottom: 10,
@@ -256,7 +230,7 @@ class _SignUpPageState extends State<SignUpPage> {
         ));
   }
 
-  Padding questionMarkRowPart() {
+  Widget questionMarkRowPart() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
       child: SizedBox(
