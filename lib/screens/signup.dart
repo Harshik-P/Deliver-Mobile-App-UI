@@ -2,6 +2,10 @@ import 'package:application2/layout.dart';
 import 'package:application2/screens/createpackage.dart';
 import 'package:application2/utils/appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/cupertino.dart';
+
+
 
 
 class SignUpPage extends StatefulWidget {
@@ -66,15 +70,19 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ),
               const SizedBox(
-                height: 5,
+                height: 20,
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
-                child: Stack(children: [
+                child: 
+                Stack(children: [
                   customTextField("Select country"),
                   boxOnTextField(),
                 ]),
+                // customTextField2("Select Country"),
               ),
+
+
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
                 child: customTextField("Enter city"),
@@ -188,9 +196,50 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
+  // Widget customTextField2(String title) {
+  //   return Row(
+  //     crossAxisAlignment: CrossAxisAlignment.start,
+  //     children: [
+  //       SizedBox(
+  //           width: MediaQuery.of(context).size.width * 0.69,
+  //           child: const TextField(
+  //             textAlign: TextAlign.end,
+  //             decoration: InputDecoration(
+  //               isDense: true,
+  //               contentPadding: EdgeInsets.only(bottom: 10.5),
+  //               enabledBorder: UnderlineInputBorder(
+  //                   borderSide: BorderSide(color: Colors.grey, width: 1)),
+  //               focusedBorder: UnderlineInputBorder(
+  //                 borderSide: BorderSide(color: Colors.grey),
+  //               ),
+  //             ),
+  //           )),
+  //       Column(
+  //         crossAxisAlignment: CrossAxisAlignment.end,
+  //         children: [
+  //           boxOnTextField(),
+  //           Padding(
+  //             padding: const EdgeInsets.only(top: 12),
+  //             child: Container(
+  //               height: 1,
+  //               width: MediaQuery.of(context).size.width * 0.2,
+  //               decoration: BoxDecoration(color: Colors.grey[500]),
+  //             ),
+  //           ),
+  //         ],
+  //       ),
+  //     ],
+  //   );
+  // }
+
   Widget customTextField(String name) {
     return TextField(
-      decoration: InputDecoration(hintText: "${name}"),
+      inputFormatters: [
+        LengthLimitingTextInputFormatter(30),
+      ],
+      decoration: InputDecoration(
+        hintText: "${name}",
+        ),
     );
   }
 

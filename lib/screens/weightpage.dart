@@ -27,7 +27,17 @@ class _WeightPageState extends State<WeightPage> {
       body: Column(
         children: [
           const SizedBox(height: 35,),
-          Center(
+          centerMainWid(),
+          const SizedBox(height: 25,),
+          nextButton()
+        ],
+      ),
+    );
+  }
+
+
+  Widget centerMainWid() {
+    return Center(
             child: Container(
               width: MediaQuery.of(context).size.width * 0.85,
               decoration: BoxDecoration(
@@ -54,27 +64,7 @@ class _WeightPageState extends State<WeightPage> {
                 ],
               ),
             ),
-          ),
-          const SizedBox(height: 25,),
-          Container(
-            width: 140,
-            height: 40,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(40),
-              border: Border.all(color: Colors.blue, width: 2)
-            ),
-            child: Center(child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text("NEXT", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),),
-                SizedBox(width: 5,),
-                Icon(Icons.keyboard_arrow_down)
-              ],
-            ),),
-          )
-        ],
-      ),
-    );
+          );
   }
 
   Widget weightCards (int index) {
@@ -110,5 +100,24 @@ class _WeightPageState extends State<WeightPage> {
     );
   }
 
+
+  Widget nextButton(){
+    return Container(
+            width: 140,
+            height: 40,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(40),
+              border: Border.all(color: Colors.blue, width: 2)
+            ),
+            child: Center(child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text("NEXT", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),),
+                SizedBox(width: 5,),
+                Icon(Icons.keyboard_arrow_down)
+              ],
+            ),),
+          );
+  }
 
 }

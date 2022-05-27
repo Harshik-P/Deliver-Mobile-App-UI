@@ -1,7 +1,7 @@
 import 'dart:math';
-
 import 'package:application2/utils/appbar.dart';
 import 'package:flutter/material.dart';
+
 
 class createPackage extends StatefulWidget {
   const createPackage({Key? key}) : super(key: key);
@@ -28,192 +28,13 @@ class _createPackageState extends State<createPackage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.9,
-                          child: Stack(children: [
-                            Positioned(
-                                top: 15,
-                                child: Text(
-                                  "From",
-                                  style: TextStyle(color: Colors.grey[600], fontSize: 19),
-                                )),
-                            TextField(
-                              cursorColor: Colors.black,
-                              textAlign: TextAlign.end,
-                              decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.symmetric(vertical: 15),
-                                suffixIcon: Transform.rotate(
-                                  angle: 330 * pi / 180,
-                                  child: const Icon(
-                                    Icons.send,
-                                    color: Colors.transparent,
-                                  ),
-                                ),
-                                suffixIconColor: Colors.transparent,
-                              ),
-                              style: const TextStyle(fontSize: 20),
-                            ),
-                            Positioned(
-                              right: 10,
-                              top: 12,
-                              child: Transform.rotate(
-                                angle: 330 * pi / 180,
-                                child: const Icon(
-                                  Icons.send,
-                                  color: Colors.blue,
-                                ),
-                              ),
-                            )
-                          ]),
-                        ),
-          
+                        customTextField("From"),
                         const SizedBox(height: 30,),
-          
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Date:", style: TextStyle(color: Colors.grey[600], fontSize: 19),),
-                              Row(
-                                children: const [
-                                  Icon(Icons.calendar_today, size: 21, color: Colors.blue,),
-                                  SizedBox(width: 15,),
-                                  SizedBox(
-                                    height: 35,
-                                    width: 35,
-                                    child: TextField(
-                                      keyboardType: TextInputType.number,
-                                      decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.symmetric(vertical: 12)
-                                      ),
-                                      style: TextStyle(fontSize: 17),
-                                    )
-                                  ),
-                                  SizedBox(width: 8,),
-                                  Text("/"),
-                                  SizedBox(width: 8,),
-                                  SizedBox(
-                                    height: 35,
-                                    width: 35,
-                                    child: TextField(
-                                      keyboardType: TextInputType.number,
-                                      decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.symmetric(vertical: 12)
-                                      ),
-                                      style: TextStyle(fontSize: 17),
-                                    )
-                                  ),
-                                  SizedBox(width: 8,),
-                                  Text("/"),
-                                  SizedBox(width: 8,),
-                                  SizedBox(
-                                    height: 35,
-                                    width: 35,
-                                    child: TextField(
-                                      keyboardType: TextInputType.number,
-                                      decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.symmetric(vertical: 12)
-                                      ),
-                                      style: TextStyle(fontSize: 17),
-                                    )
-                                  ),
-                                ],
-                              ),
-                          ],
-                        ),
-          
+                        dateTextFields(),
                         const SizedBox(height: 25,),
-          
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.9,
-                          child: Stack(children: [
-                            Positioned(
-                                top: 15,
-                                child: Text(
-                                  "To",
-                                  style: TextStyle(color: Colors.grey[600], fontSize: 19),
-                                )),
-                            TextField(
-                              cursorColor: Colors.black,
-                              textAlign: TextAlign.end,
-                              decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.symmetric(vertical: 15),
-                                suffixIcon: Transform.rotate(
-                                  angle: 330 * pi / 180,
-                                  child: const Icon(
-                                    Icons.send,
-                                    color: Colors.transparent,
-                                  ),
-                                ),
-                                suffixIconColor: Colors.transparent,
-                              ),
-                              style: const TextStyle(fontSize: 20),
-                            ),
-                            Positioned(
-                              right: 10,
-                              top: 12,
-                              child: Transform.rotate(
-                                angle: 330 * pi / 180,
-                                child: const Icon(
-                                  Icons.send,
-                                  color: Colors.blue,
-                                ),
-                              ),
-                            )
-                          ]),
-                        ),
-          
+                        customTextField("To"),
                         const SizedBox(height: 30,),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Date:", style: TextStyle(color: Colors.grey[600], fontSize: 19),),
-                            Row(
-                                children: const [
-                                  Icon(Icons.calendar_today, size: 21, color: Colors.blue,),
-                                  SizedBox(width: 15,),
-                                  SizedBox(
-                                    height: 35,
-                                    width: 35,
-                                    child: TextField(
-                                      keyboardType: TextInputType.number,
-                                      decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.symmetric(vertical: 12)
-                                      ),
-                                      style: TextStyle(fontSize: 17),
-                                    )
-                                  ),
-                                  SizedBox(width: 8,),
-                                  Text("/"),
-                                  SizedBox(width: 8,),
-                                  SizedBox(
-                                    height: 35,
-                                    width: 35,
-                                    child: TextField(
-                                      keyboardType: TextInputType.number,
-                                      decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.symmetric(vertical: 12)
-                                      ),
-                                      style: TextStyle(fontSize: 17),
-                                    )
-                                  ),
-                                  SizedBox(width: 8,),
-                                  Text("/"),
-                                  SizedBox(width: 8,),
-                                  SizedBox(
-                                    height: 35,
-                                    width: 35,
-                                    child: TextField(
-                                      keyboardType: TextInputType.number,
-                                      decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.symmetric(vertical: 12)
-                                      ),
-                                      style: TextStyle(fontSize: 17),
-                                    )
-                                  ),
-                                ],
-                              ),
-                          ],
-                        ),
+                        dateTextFields(),
                         const SizedBox(height: 30,),
                       ],
                     ),
@@ -244,13 +65,121 @@ class _createPackageState extends State<createPackage> {
                       ],
                     ),
                   ),
-                
-          
               ],
             ),
           ),
     );
   }
+
+
+
+  Widget customTextField (String title) {
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.9,
+      child: Stack(children: [
+        Positioned(
+            top: 15,
+            child: Text(
+              "${title}",
+              style: TextStyle(color: Colors.grey[600], fontSize: 19),
+            )),
+        TextField(
+          cursorColor: Colors.black,
+          textAlign: TextAlign.end,
+          decoration: InputDecoration(
+            contentPadding: const EdgeInsets.symmetric(vertical: 15),
+            suffixIcon: Transform.rotate(
+              angle: 330 * pi / 180,
+              child: const Icon(
+                Icons.send,
+                color: Colors.transparent,
+              ),
+            ),
+            suffixIconColor: Colors.transparent,
+          ),
+          style: const TextStyle(fontSize: 20),
+        ),
+        Positioned(
+          right: 10,
+          top: 12,
+          child: Transform.rotate(
+            angle: 330 * pi / 180,
+            child: const Icon(
+              Icons.send,
+              color: Colors.blue,
+            ),
+          ),
+        )
+      ]),
+    );
+  }
+
+  Widget dateTextFields () {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          "Date:",
+          style: TextStyle(color: Colors.grey[600], fontSize: 19),
+        ),
+        Row(
+          children: const [
+            Icon(
+              Icons.calendar_today,
+              size: 21,
+              color: Colors.blue,
+            ),
+            SizedBox(
+              width: 15,
+            ),
+            SizedBox(
+                height: 35,
+                width: 35,
+                child: TextField(
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(vertical: 12)),
+                  style: TextStyle(fontSize: 17),
+                )),
+            SizedBox(
+              width: 8,
+            ),
+            Text("/"),
+            SizedBox(
+              width: 8,
+            ),
+            SizedBox(
+                height: 35,
+                width: 35,
+                child: TextField(
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(vertical: 12)),
+                  style: TextStyle(fontSize: 17),
+                )),
+            SizedBox(
+              width: 8,
+            ),
+            Text("/"),
+            SizedBox(
+              width: 8,
+            ),
+            SizedBox(
+                height: 35,
+                width: 35,
+                child: TextField(
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(vertical: 12)),
+                  style: TextStyle(fontSize: 17),
+                )),
+          ],
+        ),
+      ],
+    );
+
+  }
+
 
 
   Widget transportPref(String title, int index) {
