@@ -117,7 +117,7 @@ class MyPackagePage extends StatelessWidget {
 
 
 
-  Container weightCards(String imgPath, String title) {
+  Widget weightCards(String imgPath, String title) {
     return Container(
       height: 100,
       width: 100,

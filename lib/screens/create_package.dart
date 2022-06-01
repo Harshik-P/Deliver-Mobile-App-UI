@@ -3,14 +3,14 @@ import 'package:application2/utils/appbar.dart';
 import 'package:flutter/material.dart';
 
 
-class createPackage extends StatefulWidget {
-  const createPackage({Key? key}) : super(key: key);
+class CreatePackage extends StatefulWidget {
+  const CreatePackage({Key? key}) : super(key: key);
 
   @override
-  State<createPackage> createState() => _createPackageState();
+  State<CreatePackage> createState() => _CreatePackageState();
 }
 
-class _createPackageState extends State<createPackage> {
+class _CreatePackageState extends State<CreatePackage> {
 
   int selectedTransport = 0;
   List<String> transportImages = ["assets/baby-car.png", "assets/airplane.png", "assets/bus.png"];

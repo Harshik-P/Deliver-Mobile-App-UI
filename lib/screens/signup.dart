@@ -252,10 +252,9 @@ class _SignUpPageState extends State<SignUpPage> {
       child: SizedBox(
         height: 80,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8),
+          padding: const EdgeInsets.only(top: 20),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 width: 45,
@@ -271,11 +270,7 @@ class _SignUpPageState extends State<SignUpPage> {
               const SizedBox(
                 width: 40,
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 13),
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.5,
-                  height: 80,
+                Expanded(
                   child: Text(
                     "Please enter your personal number for your delivery security",
                     style: TextStyle(
@@ -285,7 +280,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                 ),
-              ),
             ],
           ),
         ),

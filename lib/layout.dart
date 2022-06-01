@@ -21,7 +21,7 @@ class _LayoutPageState extends State<LayoutPage> {
   Widget build(BuildContext context) {
 
     final List<Widget> wids = [
-      const createPackage(),
+      const CreatePackage(),
       const MyPackagePage(),
       const WeightPage(),
       const PackageDetailsPage(),
