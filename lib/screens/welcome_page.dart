@@ -17,12 +17,12 @@ class WelcomePage extends StatelessWidget {
           textWid(),
           const SizedBox(height: 65,),
           Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                customButton(),
-                const SizedBox(width: 15,),
-                customButton(),
-              ],
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              customButton(),
+              const SizedBox(width: 15,),
+              customButton(),
+            ],
           ),
         ],      
       ),
