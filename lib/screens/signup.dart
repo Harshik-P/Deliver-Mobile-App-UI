@@ -40,10 +40,10 @@ class _SignUpPageState extends State<SignUpPage> {
                             itemCount: 3,
                             itemBuilder: (context, index) {
                               return checkBoxUI(index);
-                            }),
+                            },),
                       ),
                       showCheckWidget(checkBoxIndex),
-                    ]),
+                    ],),
                   ],
                 ),
               ),
@@ -62,7 +62,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     const SizedBox(width: 20,),
                     genderButton("Man"),
                     const SizedBox(width: 20,),
-                    genderButton("Woman")
+                    genderButton("Woman"),
                   ],
                 ),
               ),
@@ -75,7 +75,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 Stack(children: [
                   customTextField("Select country"),
                   boxOnTextField(),
-                ]),
+                ],),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
@@ -87,7 +87,8 @@ class _SignUpPageState extends State<SignUpPage> {
               questionMarkRowPart(),
               Padding(
                   padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
-                  child: customTextField("Number of passport:")),
+                  child: customTextField("Number of passport:"),
+              ),
               const SizedBox(
                 height: 10,
               ),
@@ -97,11 +98,11 @@ class _SignUpPageState extends State<SignUpPage> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     SizedBox(
-                        width: 115, child: customTextField("Release date:")
+                      width: 115, child: customTextField("Release date:")
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -117,15 +118,16 @@ class _SignUpPageState extends State<SignUpPage> {
           onTap: () {
             setState(() {
               checkBoxIndex = index;
-            });
+            },);
           },
           child: Container(
             height: 22,
             width: 22,
             decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-                border: Border.all(color: Colors.blue, width: 2)),
+              shape: BoxShape.circle,
+              color: Colors.white,
+              border: Border.all(color: Colors.blue, width: 2),
+            ),
           ),
         ),
         const SizedBox(width: 10),
@@ -136,31 +138,31 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget showCheckWidget(value){
     if(value==0){
       return const Positioned(
-          bottom: 4,
-          left: 1,
-          child: Icon(Icons.check, color: Colors.red, size: 25,)
-        );
+        bottom: 4,
+        left: 1,
+        child: Icon(Icons.check, color: Colors.red, size: 25,),
+      );
     }
     else if(value==1){
       return const Positioned(
-          bottom: 4,
-          left: 33,
-          child: Icon(Icons.check, color: Colors.red, size: 25,)
-        );
+        bottom: 4,
+        left: 33,
+        child: Icon(Icons.check, color: Colors.red, size: 25,),
+      );
     }
     else if(value==2){
       return const Positioned(
-          bottom: 4,
-          left: 65,
-          child: Icon(Icons.check, color: Colors.red, size: 25,)
-        );
+        bottom: 4,
+        left: 65,
+        child: Icon(Icons.check, color: Colors.red, size: 25,),
+      );
     }
     else {
       return const Positioned(
-          bottom: 4,
-          left: 1,
-          child: Icon(Icons.check, color: Colors.red, size: 25,)
-        );
+        bottom: 4,
+        left: 1,
+        child: Icon(Icons.check, color: Colors.red, size: 25,),
+      );
     }
   }
 
@@ -169,23 +171,25 @@ class _SignUpPageState extends State<SignUpPage> {
       onTap: () {
         setState(() {
           genderCheck = title;
-        });
+        },);
       },
       child: Container(
         width: MediaQuery.of(context).size.width * 0.2,
         height: 45,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(
-                color:
-                    genderCheck == title ? Colors.transparent : Colors.grey),
-            color: genderCheck == title ? Colors.blue : Colors.white),
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            color: genderCheck == title ? Colors.transparent : Colors.grey
+          ),
+            color: genderCheck == title ? Colors.blue : Colors.white
+        ),
         child: Center(
-            child: Text(
-          "${title}",
-          style: TextStyle(
+          child: Text(
+            title,
+            style: TextStyle(
               color: genderCheck == title ? Colors.white : Colors.grey),
-        )),
+          ),
+        ),
       ),
     );
   }
@@ -196,21 +200,22 @@ class _SignUpPageState extends State<SignUpPage> {
         LengthLimitingTextInputFormatter(30),
       ],
       decoration: InputDecoration(
-        hintText: "${name}",
-        ),
+        hintText: name,
+      ),
     );
   }
 
   Widget boxOnTextField() {
     return Positioned(
-        right: 3,
-        bottom: 10,
+      right: 3,
+      bottom: 10,
         child: Container(
           width: 43,
           height: 20,
           decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(5)),
+            border: Border.all(color: Colors.grey),
+            borderRadius: BorderRadius.circular(5),
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -218,23 +223,27 @@ class _SignUpPageState extends State<SignUpPage> {
                 height: 9,
                 width: 9,
                 decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: Colors.grey),
+                  shape: BoxShape.circle, color: Colors.grey
+                ),
               ),
               Container(
                 height: 9,
                 width: 9,
                 decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: Colors.grey),
+                  shape: BoxShape.circle, color: Colors.grey
+                ),
               ),
               Container(
                 height: 9,
                 width: 9,
                 decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: Colors.grey),
-              )
+                  shape: BoxShape.circle, color: Colors.grey
+                ),
+              ),
             ],
           ),
-        ));
+        ),
+    );
   }
 
   Widget questionMarkRowPart() {
@@ -254,9 +263,10 @@ class _SignUpPageState extends State<SignUpPage> {
                 decoration: BoxDecoration(color: Colors.grey[300]),
                 child: const Center(
                     child: Text(
-                  "?",
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w400),
-                )),
+                      "?",
+                      style: TextStyle(fontSize: 30, fontWeight: FontWeight.w400),
+                    ),
+                  ),
               ),
               const SizedBox(
                 width: 40,
@@ -264,16 +274,18 @@ class _SignUpPageState extends State<SignUpPage> {
               Padding(
                 padding: const EdgeInsets.only(top: 13),
                 child: SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    height: 80,
-                    child: Text(
-                      "Please enter your personal number for your delivery security",
-                      style: TextStyle(
-                          color: Colors.blue[800],
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400),
-                    )),
-              )
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  height: 80,
+                  child: Text(
+                    "Please enter your personal number for your delivery security",
+                    style: TextStyle(
+                      color: Colors.blue[800],
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

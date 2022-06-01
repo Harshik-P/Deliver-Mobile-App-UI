@@ -42,7 +42,7 @@ class _PackageConstraintsPageState extends State<PackageConstraintsPage> {
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: Align(
                 alignment: Alignment.topLeft,
-                child: Text("Please choose unit of dimensions", style: TextStyle(fontSize: 20, color: Colors.grey),)),
+                child: Text("Please choose unit of dimensions", style: TextStyle(fontSize: 20, color: Colors.grey),),),
             ),
             const SizedBox(height: 20,),
             Padding(
@@ -52,10 +52,10 @@ class _PackageConstraintsPageState extends State<PackageConstraintsPage> {
                 children: [
                   selectMeasurementBoxUI("inch", 0),
                   selectMeasurementBoxUI("cm", 1),
-                  selectMeasurementBoxUI("foot", 2)
+                  selectMeasurementBoxUI("foot", 2),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -71,7 +71,7 @@ class _PackageConstraintsPageState extends State<PackageConstraintsPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "${title}",
+              title,
               style: TextStyle(color: Colors.blue[800], fontSize: 18),
             ),
             Padding(
@@ -85,25 +85,26 @@ class _PackageConstraintsPageState extends State<PackageConstraintsPage> {
           ],
         ),
         SizedBox(
-            width: MediaQuery.of(context).size.width * 0.55,
-            child: const TextField(
-              keyboardType: TextInputType.number,
-              textAlign: TextAlign.end,
-              decoration: InputDecoration(
-                isDense: true,
-                contentPadding: EdgeInsets.only(bottom: 10.5),
-                enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 1)),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
+          width: MediaQuery.of(context).size.width * 0.55,
+          child: const TextField(
+            keyboardType: TextInputType.number,
+            textAlign: TextAlign.end,
+            decoration: InputDecoration(
+              isDense: true,
+              contentPadding: EdgeInsets.only(bottom: 10.5),
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey, width: 1),),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey),
               ),
-            )),
+            ),
+          ),
+        ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
-              "${measuretitle}",
+              measuretitle,
               style: const TextStyle(color: Colors.black, fontSize: 18),
             ),
             Padding(
@@ -122,31 +123,29 @@ class _PackageConstraintsPageState extends State<PackageConstraintsPage> {
 
   Widget selectMeasurementBoxUI(String title, int index) {
     return InkWell(
-        onTap: () {
-          setState(() {
-            _selectedInd = index;
-            selectedWeightMeaseure = title;
-          });
-        },
-        child: _selectedInd == index
-            ? Container(
-                height: 43,
-                width: 90,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.blue)),
-                child: Center(child: Text("${title}")),
-              )
-            : DottedBorder(
-                color: Colors.blue,
-                strokeWidth: 1,
-                dashPattern: const [8, 5],
-                child: SizedBox(
-                  height: 39,
-                  width: 86,
-                  child: Center(child: Text("${title}")),
-                )));
+      onTap: () {
+        setState(() {
+          _selectedInd = index;
+          selectedWeightMeaseure = title;
+        },);
+      },
+      child: _selectedInd == index
+        ? Container(
+          height: 43,
+          width: 90,
+          decoration: BoxDecoration(border: Border.all(color: Colors.blue),),
+          child: Center(child: Text(title),),
+          )
+          : DottedBorder(
+            color: Colors.blue,
+            strokeWidth: 1,
+            dashPattern: const [8, 5],
+            child: SizedBox(
+              height: 39,
+              width: 86,
+              child: Center(child: Text(title),),
+            ),
+          ),
+    );
   }
-
-
-
 }

@@ -19,7 +19,7 @@ class _AppBarUtilState extends State<AppBarUtil> {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
-        title: Text("${widget.name}"),
+        title: Text(widget.name),
         leading: InkWell(
           onTap: () {
             Navigator.of(context).pop();
@@ -39,7 +39,7 @@ class _AppBarUtilState extends State<AppBarUtil> {
                 itemBuilder: appBarHelper
               ),
             ),
-          )
+          ),
         ],
     );
   }

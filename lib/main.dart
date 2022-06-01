@@ -1,4 +1,4 @@
-import 'package:application2/screens/welcomepage.dart';
+import 'package:application2/screens/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

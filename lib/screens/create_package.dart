@@ -20,51 +20,49 @@ class _createPackageState extends State<createPackage> {
     return Scaffold(
       appBar: const AppBarUtil(name: "Create Package",),
       body: 
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        customTextField("From"),
-                        const SizedBox(height: 30,),
-                        dateTextFields(),
-                        const SizedBox(height: 25,),
-                        customTextField("To"),
-                        const SizedBox(height: 30,),
-                        dateTextFields(),
-                        const SizedBox(height: 30,),
-                      ],
-                    ),
+        SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    customTextField("From"),
+                    const SizedBox(height: 30,),
+                    dateTextFields(),
+                    const SizedBox(height: 25,),
+                    customTextField("To"),
+                    const SizedBox(height: 30,),
+                    dateTextFields(),
+                    const SizedBox(height: 30,),
+                  ],
                   ),
-          
+                ),
                 Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.all(10.0),
-                          child: Text(
-                            "Preference for Transport",
-                            style:
-                                TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
-                          ),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: Text(
+                          "Preference for Transport",
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
                         ),
-                        const SizedBox(height: 20,),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              transportPref(transportImages[0], 0),
-                              transportPref(transportImages[1], 1),
-                              transportPref(transportImages[2], 2),
-                            ],
-                          )
-                      ],
-                    ),
+                      ),
+                      const SizedBox(height: 20,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          transportPref(transportImages[0], 0),
+                          transportPref(transportImages[1], 1),
+                          transportPref(transportImages[2], 2),
+                        ],
+                      )
+                    ],
                   ),
+                ),
               ],
             ),
           ),
@@ -78,11 +76,12 @@ class _createPackageState extends State<createPackage> {
       width: MediaQuery.of(context).size.width * 0.9,
       child: Stack(children: [
         Positioned(
-            top: 15,
-            child: Text(
-              "${title}",
-              style: TextStyle(color: Colors.grey[600], fontSize: 19),
-            )),
+          top: 15,
+          child: Text(
+            title,
+            style: TextStyle(color: Colors.grey[600], fontSize: 19),
+          ),
+        ),
         TextField(
           cursorColor: Colors.black,
           textAlign: TextAlign.end,
@@ -109,8 +108,8 @@ class _createPackageState extends State<createPackage> {
               color: Colors.blue,
             ),
           ),
-        )
-      ]),
+        ),
+      ],),
     );
   }
 
@@ -138,9 +137,9 @@ class _createPackageState extends State<createPackage> {
                 child: TextField(
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(vertical: 12)),
+                      contentPadding: EdgeInsets.symmetric(vertical: 12),),
                   style: TextStyle(fontSize: 17),
-                )),
+                ),),
             SizedBox(
               width: 8,
             ),
@@ -154,9 +153,9 @@ class _createPackageState extends State<createPackage> {
                 child: TextField(
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(vertical: 12)),
+                    contentPadding: EdgeInsets.symmetric(vertical: 12),),
                   style: TextStyle(fontSize: 17),
-                )),
+                ),),
             SizedBox(
               width: 8,
             ),
@@ -165,14 +164,16 @@ class _createPackageState extends State<createPackage> {
               width: 8,
             ),
             SizedBox(
-                height: 35,
-                width: 35,
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(vertical: 12)),
-                  style: TextStyle(fontSize: 17),
-                )),
+              height: 35,
+              width: 35,
+              child: TextField(
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(vertical: 12),
+                ),
+                style: TextStyle(fontSize: 17),
+              ),
+            ),
           ],
         ),
       ],
@@ -188,7 +189,7 @@ class _createPackageState extends State<createPackage> {
           onTap: (){
             setState(() {
               selectedTransport = index;
-            });
+            },);
           },
           child: Container(
             height: 100,
@@ -200,11 +201,11 @@ class _createPackageState extends State<createPackage> {
                     color: Colors.grey,
                     offset: Offset(1.0, 1.0),
                     blurRadius: 5.0,
-                  )
+                  ),
                 ],
                 color: selectedTransport == index ? Colors.blue : Colors.white),
             child:
-                Image(image: AssetImage("${title}"), color: selectedTransport == index ? Colors.white : Colors.blue),
+                Image(image: AssetImage(title), color: selectedTransport == index ? Colors.white : Colors.blue),
           ),
         );
   }

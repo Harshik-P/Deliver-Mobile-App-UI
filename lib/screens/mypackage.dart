@@ -8,27 +8,27 @@ class MyPackagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-          children: [
-            const AppBarUtil(name: "My Package"),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: centerWidget(context),
+      body: Column(
+        children: [
+          const AppBarUtil(name: "My Package"),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: centerWidget(context),
+          ),
+          const SizedBox(height: 27,),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                weightCards("assets/dollar.png", "\$ 15"),
+                weightCards("assets/box.png", "8x4x5"),
+                weightCards("assets/weight1.png", "2 kg"),
+              ],
             ),
-            const SizedBox(height: 27,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  weightCards("assets/dollar.png", "\$ 15"),
-                  weightCards("assets/box.png", "8x4x5"),
-                  weightCards("assets/weight1.png", "2 kg")
-                ],
-              ),
-            )
-          ],
-        ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -50,7 +50,7 @@ class MyPackagePage extends StatelessWidget {
                   color: Colors.grey,
                   offset: Offset(1.0, 1.0),
                   blurRadius: 5.0,
-                )
+                ),
               ],
             ),
             child: Center(
@@ -76,19 +76,21 @@ class MyPackagePage extends StatelessWidget {
                   Container(
                     decoration: BoxDecoration(
                       border: Border.all(
-                          color: Colors.grey,
-                          style: BorderStyle.solid,
-                          width: 1),
+                        color: Colors.grey,
+                        style: BorderStyle.solid,
+                        width: 1
+                      ),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.fromLTRB(45, 5, 45, 5),
                       child: SizedBox(
-                          width: 130,
-                          height: 130,
-                          child: Image(
-                            image: AssetImage("assets/book.png"),
-                          )),
+                        width: 130,
+                        height: 130,
+                        child: Image(
+                          image: AssetImage("assets/book.png"),
+                        ),
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -103,12 +105,12 @@ class MyPackagePage extends StatelessWidget {
                   ),
                   const SizedBox(
                     height: 13,
-                  )
+                  ),
                 ],
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -120,30 +122,32 @@ class MyPackagePage extends StatelessWidget {
       height: 100,
       width: 100,
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(5),
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.grey,
-              offset: Offset(1.0, 1.0),
-              blurRadius: 5.0,
-            )
-          ]),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(5),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.grey,
+            offset: Offset(1.0, 1.0),
+            blurRadius: 5.0,
+          ),
+        ],
+      ),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 15),
         child: Column(
           children: [
             SizedBox(
-                height: 40,
-                width: 40,
-                child: Image(
-                  image: AssetImage("${imgPath}"),
-                  fit: BoxFit.contain,
-                )),
+              height: 40,
+              width: 40,
+              child: Image(
+                image: AssetImage(imgPath),
+                fit: BoxFit.contain,
+              ),
+            ),
             const SizedBox(
               height: 10,
             ),
-            Text("${title}")
+            Text(title),
           ],
         ),
       ),
